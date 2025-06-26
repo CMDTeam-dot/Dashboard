@@ -12,7 +12,7 @@
   let i = 0;
 
   setInterval(() => {
-    const base = 'https://lookerstudio.google.com/embed/reporting/9a751cfc-c873-4194-a5f6-84c72884b8d1/page/p_648schpstd';
+    const base = 'https://lookerstudio.google.com/embed/reporting/9a751cfc-c873-4194-a5f6-84c72884b8d1/';
     document.getElementById('lookerFrame').src = base + pages[i];
     i = (i + 1) % pages.length;
   }, 30000); // change every 30 seconds
