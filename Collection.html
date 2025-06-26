@@ -5,15 +5,15 @@
 
 <script>
   const pages = [
-    'page/p_648schpstd',
-    'page/p_nbzx9yqstd',
-    'page/p_1mwa07rstd'
+    'p_648schpstd',
+    'p_nbzx9yqstd',
+    'p_1mwa07rstd'
   ];
   let i = 0;
 
   setInterval(() => {
-    const base = 'https://lookerstudio.google.com/embed/reporting/9a751cfc-c873-4194-a5f6-84c72884b8d1/';
+    const base = 'https://lookerstudio.google.com/embed/reporting/9a751cfc-c873-4194-a5f6-84c72884b8d1/page/';
     document.getElementById('lookerFrame').src = base + pages[i];
     i = (i + 1) % pages.length;
-  }, 30000); // change every 30 seconds
+  }, 10000); // change every 30 seconds
 </script>
