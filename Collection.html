@@ -1,0 +1,18 @@
+<iframe id="lookerFrame" 
+        src="https://lookerstudio.google.com/embed/reporting/9a751cfc-c873-4194-a5f6-84c72884b8d1/page/p_648schpstd" 
+        width="100%" height="800" frameborder="0" allowfullscreen></iframe>
+
+<script>
+  const pages = [
+    'page/p_648schpstd',
+    'page/p_axolawqstd',
+    'page/p_nbzx9yqstd'
+  ];
+  let i = 0;
+
+  setInterval(() => {
+    const base = 'https://lookerstudio.google.com/embed/reporting/9a751cfc-c873-4194-a5f6-84c72884b8d1/page/p_648schpstd';
+    document.getElementById('lookerFrame').src = base + pages[i];
+    i = (i + 1) % pages.length;
+  }, 60000); // change every 10 seconds
+</script>
