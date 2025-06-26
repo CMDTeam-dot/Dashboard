@@ -1,20 +1,31 @@
-<iframe id="lookerFrame" 
-        <iframe width="100%" height="800" 
-        src="https://lookerstudio.google.com/embed/reporting/9a751cfc-c873-4194-a5f6-84c72884b8d1/page/p_648schpstd" frameborder="0" style="border:0" allowfullscreen sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>
+<style>
+  iframe {
+    width: 100%;
+    height: 800px;
+    border: none;
+    display: none;
+  }
+  iframe.active {
+    display: block;
+  }
+</style>
 
+<div id="iframeContainer">
+  <iframe id="frame0" class="active"
+    src="https://lookerstudio.google.com/embed/reporting/9a751cfc-c873-4194-a5f6-84c72884b8d1/page/p_648schpstd"></iframe>
+  <iframe id="frame1"
+    src="https://lookerstudio.google.com/embed/reporting/9a751cfc-c873-4194-a5f6-84c72884b8d1/page/p_nbzx9yqstd"></iframe>
+  <iframe id="frame2"
+    src="https://lookerstudio.google.com/embed/reporting/9a751cfc-c873-4194-a5f6-84c72884b8d1/page/p_1mwa07rstd"></iframe>
+</div>
 
 <script>
-  const pages = [
-    'p_648schpstd',
-    'p_nbzx9yqstd',
-    'p_1mwa07rstd'
-  ];
-  let i = 0;
+  let current = 0;
+  const total = 3;
 
   setInterval(() => {
-    const base = 'https://lookerstudio.google.com/embed/reporting/9a751cfc-c873-4194-a5f6-84c72884b8d1/page/';
-    document.getElementById('lookerFrame').src = base + pages[i];
-    i = (i + 1) % pages.length;
-  }, 30000); // change every 30 seconds
+    document.getElementById(`frame${current}`).classList.remove('active');
+    current = (current + 1) % total;
+    document.getElementById(`frame${current}`).classList.add('active');
+  }, 30000);
 </script>
-
